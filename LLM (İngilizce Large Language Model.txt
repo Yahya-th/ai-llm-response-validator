@@ -1,0 +1,4 @@
+LLM (İngilizce Large Language Model), Türkçede Büyük Dil Modeli anlamına gelen, yapay zekanın insan dilini anlama, işleme ve yeni metinler üretme konusunda uzmanlaşmış bir alt dalıdır.
+
+
+API (Uygulama Programlama Arayüzü), iki farklı yazılımın belirli kurallar ve protokoller aracılığıyla birbiriyle iletişim kurmasını ve veri alışverişi yapmasını sağlayan bir aracı katmandır
