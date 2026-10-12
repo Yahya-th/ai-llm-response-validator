@@ -16,7 +16,7 @@ def yaniti_dogrula(veri: dict):
         return f"Veri doğrulama hatası: {e.errors()}"
 
 
-# 1.TEST Doğru veri senaryosu
+# 1.TEST Doğru veri senaryosu     Validation: Veriyi aldık, Pydantic kurallarıyla (Field) denetledik.
 gecerli_veri = {
     "kullanici_id": 101,
     "yanit_metni": "Yapay zeka yaniti basariyla dogrulandi.",
@@ -48,10 +48,23 @@ model = AIYanitModeli(
     durum = "basarili"              # Durum zaten varsayılan olarak "basarili" olduğu için bunu yazamasak da olur.
 )
 
-# Nesneyi dict yapıp yanitlar.json dosyasına kaydediyoruz.
+# Nesneyi dict yapıp yanitlar.json dosyasına kaydediyoruz.(Serialization)
+# Serialization: Doğrulanmış objeyi model_dump() ile alıp json.dump() kullanarak dosyaya yazdık.
 
 with open("yanitlar.json", "w", encoding="utf-8") as f:
     json.dump(model.model_dump(), f, ensure_ascii=False, indent=4)
 
 print("Dogrukanmis veri yanitlar.json dosyasina yazildi.")
+
+
+# Şimdi tam tersini yapıyoruz JSON'dan verileri çekip okuyoruz.(Deserialization)
+# Deserialization: json.load() ile dosyadan okuyup AIYanitModeli(**veri) ile tekrar Pydantic nesnesi yaptık.
+
+with open("yanitlar.json", "r", encoding="utf-8") as f:
+    okunan_veri = json.load(f)
+
+yuklenen_model = AIYanitModeli(**okunan_veri)
+print(f"JSON'dan Okundu ve Doğrulandı: {yuklenen_model.yanit_metni} (Kullanici ID: {yuklenen_model.kullanici_id})")
+
+
         
