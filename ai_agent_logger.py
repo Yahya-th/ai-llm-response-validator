@@ -34,6 +34,6 @@ print(log_nesnesi.model_dump_json(indent=2))
 import json
 
 with open("ajan_loglari.json", "w", encoding="utf-8") as f:
-    json.dump(log_nesnesi.model_dump(), f, ensure_ascii=False, indent=4)
+    json.dump(log_nesnesi.model_dump(), f, ensure_ascii=False, indent=4)              # indent json dosyasının okunaklı olmasını sağlar.
 
 print("\nLog basariyla ajan_loglari.json dosyasina yazildi")
