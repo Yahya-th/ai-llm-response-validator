@@ -1,4 +1,13 @@
 LLM (İngilizce Large Language Model), Türkçede Büyük Dil Modeli anlamına gelen, yapay zekanın insan dilini anlama, işleme ve yeni metinler üretme konusunda uzmanlaşmış bir alt dalıdır.
 
 
-API (Uygulama Programlama Arayüzü), iki farklı yazılımın belirli kurallar ve protokoller aracılığıyla birbiriyle iletişim kurmasını ve veri alışverişi yapmasını sağlayan bir aracı katmandır
+API (Uygulama Programlama Arayüzü), iki farklı yazılımın belirli kurallar ve protokoller aracılığıyla birbiriyle iletişim kurmasını ve veri alışverişi yapmasını sağlayan bir aracı katmandır.
+
+
+Pydantic, Python tip ipuçlarını (type hints) kullanarak çalışma zamanında (runtime) veri doğrulama (validation), dönüştürme (coercion) ve modelleme sağlayan açık kaynaklı bir Python kütüphanesidir.
+
+
+Sıradan Python Sınıfı (Pydantic'siz): Yaş yerine metin versen de Python susar, denetim YAPMAZ:
+
+
+Pydantic Sınıfı (from pydantic import BaseModel ile): Yaş yerine metin verdiğin an Pydantic KAPIDA YAKALAR ve hata fırlatır.

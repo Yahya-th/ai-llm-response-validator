@@ -1,4 +1,5 @@
 from pydantic import BaseModel, Field, ValidationError
+import json
 
 class AIYanitModeli(BaseModel):
     kullanici_id: int = Field(gt=0)
@@ -37,3 +38,20 @@ hatali_veri = {
 
 print("\n-- Hatali Veri Testi --")
 print(yaniti_dogrula(hatali_veri))
+
+
+model = AIYanitModeli(
+    kullanici_id = 103,
+    yanit_metni = "Yapay zeka yaniti basariyla uretidi ve dogrulandi.",
+    guven_skoru = 0.93,
+    harcanan_token = 35,
+    durum = "basarili"              # Durum zaten varsayılan olarak "basarili" olduğu için bunu yazamasak da olur.
+)
+
+# Nesneyi dict yapıp yanitlar.json dosyasına kaydediyoruz.
+
+with open("yanitlar.json", "w", encoding="utf-8") as f:
+    json.dump(model.model_dump(), f, ensure_ascii=False, indent=4)
+
+print("Dogrukanmis veri yanitlar.json dosyasina yazildi.")
+        
