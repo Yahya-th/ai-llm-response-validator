@@ -1,0 +1,10 @@
+{
+    "ajan_id": "agent-101",
+    "gorev_tanimi": "İnternette en güncel Python haberlerini arama",
+    "kullanilan_arac": {
+        "arac_adi": "sql_query_tool",
+        "basarili_mi": true,
+        "calisma_suresi_ms": 145.5
+    },
+    "onaylandi_mi": true
+}
